@@ -43,7 +43,7 @@ public class DayTwo {
                         .reduce(DayTwo::addDiagonal)
                         .map(c -> pressesDiagonal.add(toPressDiagonal(c))));
 
-        System.out.println("Solution day two.1: " + pressesDiagonal);
+        System.out.println("Solution day two.2: " + pressesDiagonal);
     }
 
     private Integer toPress(Coordinate c) {
