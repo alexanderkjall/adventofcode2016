@@ -25,9 +25,8 @@ public class DayTwo {
         valid.put(new Coordinate(2, 0), '9');
     }
 
-    public void press(String instructions) {
+    public String press(String instructions) {
         List<Integer> presses = new ArrayList<>();
-        List<Character> pressesDiagonal = new ArrayList<>();
 
         Arrays.stream(instructions.split("\\n"))
                 .forEach(s -> ("0" + s).codePoints()
@@ -35,7 +34,11 @@ public class DayTwo {
                         .reduce(DayTwo::add)
                         .map(c -> presses.add(toPress(c))));
 
-        System.out.println("Solution day two.1: " + presses);
+        return presses.toString();
+    }
+
+    public String pressDiagonal(String instructions) {
+        List<Character> pressesDiagonal = new ArrayList<>();
 
         Arrays.stream(instructions.split("\\n"))
                 .forEach(s -> ("1" + s).codePoints()
@@ -43,7 +46,7 @@ public class DayTwo {
                         .reduce(DayTwo::addDiagonal)
                         .map(c -> pressesDiagonal.add(toPressDiagonal(c))));
 
-        System.out.println("Solution day two.2: " + pressesDiagonal);
+        return pressesDiagonal.toString();
     }
 
     private Integer toPress(Coordinate c) {

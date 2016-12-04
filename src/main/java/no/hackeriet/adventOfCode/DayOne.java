@@ -10,23 +10,29 @@ import java.util.Set;
 
 public class DayOne {
 
-    public void walk(String directions) {
-        Position p = new Position();
+    private Position p = new Position();
+
+    public int walk(String directions) {
 
         Arrays.stream(directions.split(", |\\n"))
                 .map(Instruction::new)
                 .forEach(p::go);
 
-        System.out.println("Solution day one.1: " + Math.abs(p.getX()) + Math.abs(p.getY()));
+        return Math.abs(p.getX()) + Math.abs(p.getY());
+    }
 
+    public int walkAgain() {
         Set<Coordinate> seen = new HashSet<>();
         final boolean[] printed = {false};
-        p.getOldCoords().stream().forEach(c -> {
+        final int[] solution = {0};
+        p.getOldCoords().forEach(c -> {
             if (!printed[0] && seen.contains(c)) {
-                System.out.println("Solution day one.2: " + Math.abs(c.getX()) + Math.abs(c.getY()));
+                solution[0] = Math.abs(c.getX()) + Math.abs(c.getY());
                 printed[0] = true;
             }
             seen.add(c);
         });
+
+        return solution[0];
     }
 }

@@ -8,14 +8,14 @@ import java.util.List;
 
 public class DayThree {
 
-    public void calc(String input) {
-        int nrOfValid = Arrays.stream(input.split("\\n"))
+    public int calc(String input) {
+        return Arrays.stream(input.split("\\n"))
                 .map(this::parse)
                 .mapToInt(t -> t.valid() ? 1 : 0)
                 .sum();
+    }
 
-        System.out.println("Solution day three.1: " + nrOfValid);
-
+    public int calcAgain(String input) {
         List<Integer> buffer = new ArrayList<>(9);
         List<Triangle> reOrdered = new ArrayList<>();
         Arrays.stream(input.split("\\n| +"))
@@ -31,11 +31,9 @@ public class DayThree {
                     }
                 });
 
-        nrOfValid = reOrdered.stream()
+        return reOrdered.stream()
                 .mapToInt(t -> t.valid() ? 1 : 0)
                 .sum();
-
-        System.out.println("Solution day three.2: " + nrOfValid);
     }
 
     public Triangle parse(String line) {
