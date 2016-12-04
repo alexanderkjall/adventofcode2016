@@ -1,4 +1,4 @@
-package no.hackeriet.adventOfCode;
+package no.hackeriet.adventOfCode.solutions;
 
 import no.hackeriet.adventOfCode.beans.Triangle;
 

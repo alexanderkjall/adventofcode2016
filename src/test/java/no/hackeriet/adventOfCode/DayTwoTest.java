@@ -1,5 +1,6 @@
 package no.hackeriet.adventOfCode;
 
+import no.hackeriet.adventOfCode.solutions.DayTwo;
 import org.junit.Test;
 
 public class DayTwoTest {
