@@ -22,5 +22,6 @@ public class App {
         System.out.println("Solution day four.1: " + d4.sumRooms(Util.read("dayFour_input")));
         System.out.println("Solution day four.2: " + d4.decryptRooms(Util.read("dayFour_input")));
         System.out.println("Solution day five.1: " + d5.hash("cxdnnyjw"));
+        System.out.println("Solution day five.2: " + d5.hashSecond("cxdnnyjw"));
     }
 }
