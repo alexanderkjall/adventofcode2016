@@ -1,9 +1,8 @@
 package no.hackeriet.adventOfCode;
 
-import no.hackeriet.adventOfCode.solutions.DayFour;
-import no.hackeriet.adventOfCode.solutions.DayOne;
-import no.hackeriet.adventOfCode.solutions.DayThree;
-import no.hackeriet.adventOfCode.solutions.DayTwo;
+import no.hackeriet.adventOfCode.solutions.*;
+
+import java.security.NoSuchAlgorithmException;
 
 public class App {
 
@@ -11,8 +10,9 @@ public class App {
     private static DayTwo d2 = new DayTwo();
     private static DayThree d3 = new DayThree();
     private static DayFour d4 = new DayFour();
+    private static DayFive d5 = new DayFive();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchAlgorithmException {
         System.out.println("Solution day one.1: " + d1.walk(Util.read("dayOne_input")));
         System.out.println("Solution day one.2: " + d1.walkAgain());
         System.out.println("Solution day two.1: " + d2.press(Util.read("dayTwo_input")));
@@ -21,5 +21,6 @@ public class App {
         System.out.println("Solution day three.2: " + d3.calcAgain(Util.read("dayThree_input")));
         System.out.println("Solution day four.1: " + d4.sumRooms(Util.read("dayFour_input")));
         System.out.println("Solution day four.2: " + d4.decryptRooms(Util.read("dayFour_input")));
+        System.out.println("Solution day five.1: " + d5.hash("cxdnnyjw"));
     }
 }
