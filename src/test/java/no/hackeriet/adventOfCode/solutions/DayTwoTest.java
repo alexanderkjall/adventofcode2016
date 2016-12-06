@@ -1,6 +1,6 @@
-package no.hackeriet.adventOfCode;
+package no.hackeriet.adventOfCode.solutions;
 
-import no.hackeriet.adventOfCode.solutions.DayTwo;
+import no.hackeriet.adventOfCode.Util;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

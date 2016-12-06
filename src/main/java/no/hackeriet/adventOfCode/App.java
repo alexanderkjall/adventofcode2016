@@ -11,6 +11,7 @@ public class App {
     private static DayThree d3 = new DayThree();
     private static DayFour d4 = new DayFour();
     private static DayFive d5 = new DayFive();
+    private static DaySix d6 = new DaySix();
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
         System.out.println("Solution day one.1: " + d1.walk(Util.read("dayOne_input")));
@@ -21,7 +22,8 @@ public class App {
         System.out.println("Solution day three.2: " + d3.calcAgain(Util.read("dayThree_input")));
         System.out.println("Solution day four.1: " + d4.sumRooms(Util.read("dayFour_input")));
         System.out.println("Solution day four.2: " + d4.decryptRooms(Util.read("dayFour_input")));
-        System.out.println("Solution day five.1: " + d5.hash("cxdnnyjw"));
-        System.out.println("Solution day five.2: " + d5.hashSecond("cxdnnyjw"));
+        //System.out.println("Solution day five.1: " + d5.hash("cxdnnyjw"));
+        //System.out.println("Solution day five.2: " + d5.hashSecond("cxdnnyjw"));
+        System.out.println("Solution day six.1: " + d6.errorCorrect(Util.read("daySix_input")));
     }
 }
