@@ -24,6 +24,7 @@ public class App {
         System.out.println("Solution day four.2: " + d4.decryptRooms(Util.read("dayFour_input")));
         //System.out.println("Solution day five.1: " + d5.hash("cxdnnyjw"));
         //System.out.println("Solution day five.2: " + d5.hashSecond("cxdnnyjw"));
-        System.out.println("Solution day six.1: " + d6.errorCorrect(Util.read("daySix_input")));
+        System.out.println("Solution day six.1: " + d6.errorCorrect(Util.read("daySix_input"), true));
+        System.out.println("Solution day six.2: " + d6.errorCorrect(Util.read("daySix_input"), false));
     }
 }

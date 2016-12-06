@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class DaySixTest {
     @Test
     public void errorCorrect() throws Exception {
-        assertEquals("easter", new DaySix().errorCorrect(Util.read("daySixExample")));
+        assertEquals("easter", new DaySix().errorCorrect(Util.read("daySixExample"), true));
+        assertEquals("advent", new DaySix().errorCorrect(Util.read("daySixExample"), false));
     }
 }
