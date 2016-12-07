@@ -31,4 +31,23 @@ public class IPv7Test {
         assertFalse(new IPv7("tivuddusgnewzshs[mausfjbgxmyibin]yponuityptavbhekrlg[qeyafuevtlqemtfa]owtdxadrwwbxbrkl[obfcyxbifipwhduudu]mjocivgvrcbrllso").verifyABA());
     }
 
+    @Test
+    public void verifyBAB1() throws Exception {
+        assertTrue(new IPv7("aba[bab]xyz").verifyBAB());
+    }
+
+    @Test
+    public void verifyBAB2() throws Exception {
+        assertFalse(new IPv7("xyx[xyx]xyx").verifyBAB());
+    }
+
+    @Test
+    public void verifyBAB3() throws Exception {
+        assertTrue(new IPv7("aaa[kek]eke").verifyBAB());
+    }
+
+    @Test
+    public void verifyBAB4() throws Exception {
+        assertTrue(new IPv7("zazbz[bzb]cdb").verifyBAB());
+    }
 }

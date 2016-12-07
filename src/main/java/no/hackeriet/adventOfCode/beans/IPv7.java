@@ -47,4 +47,34 @@ public class IPv7 {
         }
         return false;
     }
+
+    public boolean verifyBAB() {
+        for(String s : seqs) {
+            List<String> babs = findBAB(s);
+
+            for(String bab : babs) {
+                boolean valid = false;
+                for (String hs : hyperSeqs) {
+                    if (hs.contains(bab)) {
+                        valid = true;
+                        break;
+                    }
+                }
+                if(valid)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    private List<String> findBAB(String s) {
+        List<String> toRet = new ArrayList<>();
+
+        for(int i = 0; i < s.length() - 2; i++) {
+            if(s.charAt(i) == s.charAt(i + 2) && s.charAt(i) != s.charAt(i + 1))
+                toRet.add(s.charAt(i + 1) + "" + s.charAt(i) + "" + s.charAt(i + 1));
+        }
+
+        return toRet;
+    }
 }

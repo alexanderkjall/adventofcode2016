@@ -28,5 +28,6 @@ public class App {
         System.out.println("Solution day six.1: " + d6.errorCorrect(Util.read("daySix_input"), true));
         System.out.println("Solution day six.2: " + d6.errorCorrect(Util.read("daySix_input"), false));
         System.out.println("Solution day seven.1: " + d7.checkTLS(Util.read("daySeven_input")));
+        System.out.println("Solution day seven.2: " + d7.checkSSL(Util.read("daySeven_input")));
     }
 }
