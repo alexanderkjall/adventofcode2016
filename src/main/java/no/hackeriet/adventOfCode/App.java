@@ -14,6 +14,7 @@ public class App {
     private static DaySix d6 = new DaySix();
     private static DaySeven d7 = new DaySeven();
     private static DayEight d8 = new DayEight();
+    private static DayNine d9 = new DayNine();
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
         System.out.println("Solution day one.1: " + d1.walk(Util.read("dayOne_input")));
@@ -31,5 +32,6 @@ public class App {
         System.out.println("Solution day seven.1: " + d7.checkTLS(Util.read("daySeven_input")));
         System.out.println("Solution day seven.2: " + d7.checkSSL(Util.read("daySeven_input")));
         System.out.println("Solution day eight.1: " + d8.lightPixels(Util.read("dayEight_input")));
+        System.out.println("Solution day nine.1: " + d9.inflate(Util.read("dayNine_input")));
     }
 }
