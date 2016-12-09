@@ -1,5 +1,8 @@
 package no.hackeriet.adventOfCode.solutions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DayNine {
     private enum States {
         NORMAL,
@@ -8,11 +11,9 @@ public class DayNine {
         BUF
     }
 
-    public long inflate(String input, boolean v2) {
-        return expand(input, v2);
-    }
+    private Map<String, Long> cache = new HashMap<>();
 
-    private long expand(String input, boolean v2) {
+    public long inflate(String input, boolean v2) {
         final long[] result = {0};
         StringBuilder subBuf = new StringBuilder();
 
@@ -57,14 +58,14 @@ public class DayNine {
 
                             if(length[0] <= 0) {
                                 long res;
-                                try {
-                                    Thread.sleep(200);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                                if(v2)
-                                    res = expand(subBuf.toString(), true);
-                                else
+                                if(v2) {
+                                    if(cache.containsKey(subBuf.toString()))
+                                        res = cache.get(subBuf.toString());
+                                    else {
+                                        res = inflate(subBuf.toString(), true);
+                                        cache.put(subBuf.toString(), res);
+                                    }
+                                } else
                                     res = subBuf.toString().length();
 
                                 for(int i = 0; i < reps[0]; i++) {
