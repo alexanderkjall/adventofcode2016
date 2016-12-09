@@ -32,6 +32,7 @@ public class App {
         System.out.println("Solution day seven.1: " + d7.checkTLS(Util.read("daySeven_input")));
         System.out.println("Solution day seven.2: " + d7.checkSSL(Util.read("daySeven_input")));
         System.out.println("Solution day eight.1: " + d8.lightPixels(Util.read("dayEight_input")));
-        System.out.println("Solution day nine.1: " + d9.inflate(Util.read("dayNine_input")));
+        System.out.println("Solution day nine.1: " + d9.inflate(Util.read("dayNine_input"), false));
+        System.out.println("Solution day nine.2: " + d9.inflate(Util.read("dayNine_input"), true));
     }
 }

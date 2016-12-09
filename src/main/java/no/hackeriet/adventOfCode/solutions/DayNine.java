@@ -8,8 +8,12 @@ public class DayNine {
         BUF
     }
 
-    public int inflate(String input) {
-        StringBuilder result = new StringBuilder();
+    public long inflate(String input, boolean v2) {
+        return expand(input, v2);
+    }
+
+    private long expand(String input, boolean v2) {
+        final long[] result = {0};
         StringBuilder subBuf = new StringBuilder();
 
         final States[] state = {States.NORMAL};
@@ -25,7 +29,7 @@ public class DayNine {
                             if(c == '(') {
                                 state[0] = States.BUF_LENGTH;
                             } else {
-                                result.append(cs);
+                                result[0]++;
                             }
                             break;
                         case BUF_LENGTH:
@@ -52,8 +56,20 @@ public class DayNine {
                             length[0]--;
 
                             if(length[0] <= 0) {
-                                for(int i = 0; i < reps[0]; i++)
-                                    result.append(subBuf.toString());
+                                long res;
+                                try {
+                                    Thread.sleep(200);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                                if(v2)
+                                    res = expand(subBuf.toString(), true);
+                                else
+                                    res = subBuf.toString().length();
+
+                                for(int i = 0; i < reps[0]; i++) {
+                                    result[0] += res;
+                                }
 
                                 subBuf.setLength(0);
                                 state[0] = States.NORMAL;
@@ -62,6 +78,6 @@ public class DayNine {
                     }
                 });
 
-        return result.toString().length();
+        return result[0];
     }
 }
