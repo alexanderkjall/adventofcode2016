@@ -13,6 +13,7 @@ public class App {
     private static DayFive d5 = new DayFive();
     private static DaySix d6 = new DaySix();
     private static DaySeven d7 = new DaySeven();
+    private static DayEight d8 = new DayEight();
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
         System.out.println("Solution day one.1: " + d1.walk(Util.read("dayOne_input")));
@@ -29,5 +30,6 @@ public class App {
         System.out.println("Solution day six.2: " + d6.errorCorrect(Util.read("daySix_input"), false));
         System.out.println("Solution day seven.1: " + d7.checkTLS(Util.read("daySeven_input")));
         System.out.println("Solution day seven.2: " + d7.checkSSL(Util.read("daySeven_input")));
+        System.out.println("Solution day eight.1: " + d8.lightPixels(Util.read("dayEight_input")));
     }
 }
